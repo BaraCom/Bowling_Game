@@ -1,0 +1,47 @@
+wrapper.wrap {
+  display: block;
+  margin: auto;
+  width: 1200px;
+}
+wrapper.wrap .message_container .incorrect_data {
+  background: #ffc4c5;
+  background: -moz-linear-gradient(left, #ffc4c5 0%, #ffeaea 22%, #fff9f9 50%, #ffeaea 78%, #ffc4c5 100%);
+  background: -webkit-linear-gradient(left, #ffc4c5 0%, #ffeaea 22%, #fff9f9 50%, #ffeaea 78%, #ffc4c5 100%);
+  background: linear-gradient(to right, #ffc4c5 0%, #ffeaea 22%, #fff9f9 50%, #ffeaea 78%, #ffc4c5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc4c5', endColorstr='#ffc4c5', GradientType=1);
+  color: darkred;
+  display: block;
+  text-align: center;
+}
+wrapper.wrap .enter_container span.enter_link {
+  cursor: pointer;
+}
+wrapper.wrap .enter_container form.enter_form {
+  display: none;
+}
+wrapper.wrap .reg_container span.reg_link {
+  display: block;
+  cursor: pointer;
+}
+wrapper.wrap .reg_container form.reg_form {
+  display: none;
+}
+wrapper.wrap .play_container {
+  display: block;
+  width: 100%;
+}
+wrapper.wrap .play_container .user_data_container {
+  border: 1px solid black;
+  display: inline-block;
+  width: 30%;
+}
+wrapper.wrap .greeting_quality p.incorrect_quality_data {
+  background: #ffc4c5;
+  background: -moz-linear-gradient(left, #ffc4c5 0%, #ffeaea 22%, #fff9f9 50%, #ffeaea 78%, #ffc4c5 100%);
+  background: -webkit-linear-gradient(left, #ffc4c5 0%, #ffeaea 22%, #fff9f9 50%, #ffeaea 78%, #ffc4c5 100%);
+  background: linear-gradient(to right, #ffc4c5 0%, #ffeaea 22%, #fff9f9 50%, #ffeaea 78%, #ffc4c5 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffc4c5', endColorstr='#ffc4c5', GradientType=1);
+  color: darkred;
+  display: block;
+  text-align: center;
+}
