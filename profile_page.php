@@ -1,8 +1,10 @@
 <?php
 
     require_once('create_user.php');
+//    require_once('config_game.php');
 
     $user = new CreateUser();
+//    $game = new ConfigGame();
 ?>
 <!doctype html>
 <html lang="en">
@@ -32,15 +34,27 @@
                 </p>
                 <form class="quality_form" method="post" action="profile_page.php">
                     <input class="quality_input" type="text" name="quality_input" placeholder="1 - 6" required>
+                    <?php $input = $_SESSION['quality_input'] = $_POST['quality_input']; ?>
                     <button class="quality_button" type="submit" name="quality_button" >ok</button>
                 </form>
-
             </div>
             <div class="play_container">
                 <?php
                     $user->getQualityPlayers($_POST['quality_input']);
-                    $user->changeName($_POST['quality_input']);
+                    if($user->checkEnterNumbers($_POST['quality_input']) == true) {
+                        $user->changeName($_POST['quality_input']);
+                    }
                 ?>
+                <p class="pitch">
+                    <script>
+                        var data_input = <?php echo $_POST['quality_input']; ?> ;
+
+                        $('.pitch').bind('click', function () {
+                            clickButtonPitch(data_input);
+                        });
+                    </script>
+                    pitch
+                </p>
             </div>
         </wrapper>
     </body>

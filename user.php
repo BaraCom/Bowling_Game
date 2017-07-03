@@ -1,5 +1,6 @@
 <?php
     require_once('PDOConfig2.php');
+    require_once('config_game.php');
 
     class User {
 
@@ -16,7 +17,9 @@
         }
 
         public function checkEnterNumbers($num) {
-            if($num >= 1 && $num <= 6) {
+            $enterNum = (int) $num;
+
+            if($enterNum >= 1 && $enterNum <= 6) {
                 return true;
             }
         }
@@ -30,9 +33,6 @@
                 </p>
                 <p class="user_point_<?php echo $i; ?>">
                     Points: 0
-                </p>
-                <p class="pitch_<?php echo $i; ?>">
-                    pitch
                 </p>
             </div>
         <?php $i++;

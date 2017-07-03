@@ -11,6 +11,11 @@
 
             if($this->checkToPressButton($_POST['quality_button']) == true) {
                 if($this->checkEnterNumbers($qualityPlayers) == true) {
+                    ?>
+                    <script>
+                        propButtonDisabled($('.quality_button'));
+                    </script>
+                    <?php
                     for ($i = 0; $i < $qualityPlayers; $i++) {
                         $this->createDataInput();
                     }
@@ -24,19 +29,15 @@
         }
 
         public function changeName($qualityPlayers) {
-            if($this->checkToPressButton($_POST['quality_button']) == true) {
-                ?>
-                    <script>
-                        propButton($('.quality_button'));
-                    </script>
+
+            for($i = 0; $i < $qualityPlayers; $i++) { ?>
+                <script>
+                    setName(<?php echo $i + 1; ?>);
+                </script>
                 <?php
-                for($i = 0; $i < $qualityPlayers; $i++) { ?>
-                    <script>
-                        setName(<?php echo $i + 1; ?>);
-                    </script>
-                    <?php
-                }
             }
         }
+
+
     }
 ?>
