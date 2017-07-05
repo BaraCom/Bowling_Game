@@ -56,10 +56,6 @@ function propButtonDisabled(attr_for_prop) {
     $(attr_for_prop).prop('disabled', true);
 }
 
-function propButtonUnDisabled(attr_for_prop) {
-    $(attr_for_prop).prop('disabled', false);
-}
-
 function setName(i) {
     var a = prompt('Enter name for player №' + i);
 
@@ -77,10 +73,6 @@ function random_num(min, max) {
 
 function getPoints(points_array, id) {
     return points_array[id];
-}
-
-function setPoints(i, value_points) {
-    $('.user_point_' + i).text('Points: ' + value_points);
 }
 
 function sumPointsValue(points_array, id, rand_num) {

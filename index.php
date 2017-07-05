@@ -10,6 +10,7 @@
     <meta charset="UTF-8">
     <title>Bowling_Club</title>
     <link rel="stylesheet" href="main.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
     <script src="jquery-3.2.1.js"></script>
     <script src="javascript.js"></script>
 </head>

@@ -14,20 +14,24 @@
               content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Bowling_Club</title>
+        <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Amaranth" rel="stylesheet">
         <link rel="stylesheet" href="main.css">
         <script src="jquery-3.2.1.js"></script>
         <script src="javascript.js"></script>
     </head>
     <body>
-        <wrapper class="wrap">
+        <div class="wrap_game">
             <div class="greeting">
-                <p class="greeting_welcome">
+                <span class="greeting_welcome">
                     Hello, <?php echo $_SESSION['user_data']; ?>!
-                </p>
+                </span>
+            </div>
+            <div class="lamp">
+
             </div>
             <div class="greeting_quality">
                 <p class="quality_of_players">
-                    Indicate the number of players:
+                    Number of players:
                 </p>
                 <p class="incorrect_quality_data">
 
@@ -56,6 +60,6 @@
                     pitch
                 </p>
             </div>
-        </wrapper>
+        </div>
     </body>
 </html>
