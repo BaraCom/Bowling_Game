@@ -1,6 +1,5 @@
 <?php
     require_once('PDOConfig.php');
-    require_once('config_game.php');
 
     class User {
 
