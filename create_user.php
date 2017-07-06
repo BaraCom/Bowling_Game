@@ -19,6 +19,7 @@
                     for ($i = 0; $i < $qualityPlayers; $i++) {
                         $this->createDataInput();
                     }
+                    $this->createPitchButton();
                 }
                 else { ?>
                     <script>
@@ -37,7 +38,5 @@
                 <?php
             }
         }
-
-
     }
 ?>

@@ -213,7 +213,7 @@ wrapper.wrap .play_container .user_data_container {
   display: ruby-text;
   font-family: 'Architects Daughter', cursive;
   font-size: 50px;
-  margin: 57px 0px 0px 120px;
+  margin: 57px 0px 0px 100px;
   height: 200px;
 }
 .wrap_game .lamp {
@@ -240,12 +240,19 @@ wrapper.wrap .play_container .user_data_container {
   }
 }
 .wrap_game .greeting_quality .incorrect_quality_data {
-  color: #009691;
+  animation-name: incor;
+  animation-duration: 10s;
+  color: #040203;
   font-size: 25px;
   margin: 10px 0px -20px 830px;
 }
+@keyframes incor {
+  50% {
+    color: #009691;
+  }
+}
 .wrap_game .greeting_quality .quality_form {
-  background: url("/images/bg_bowling_1.png") no-repeat left;
+  background: url("/images/bg_bowling_3.png") no-repeat left;
   height: 200px;
 }
 .wrap_game .greeting_quality .quality_form .quality_input {
@@ -297,8 +304,9 @@ wrapper.wrap .play_container .user_data_container {
   font-family: 'Concert One', cursive;
   font-size: 25px;
   margin: 30px 0px 0px 1100px;
+  text-align: right;
   text-transform: uppercase;
-  transition: all 700ms ease-in-out;
+  transition: all 500ms ease-in-out;
   width: 50px;
   height: 35px;
 }
@@ -307,5 +315,81 @@ wrapper.wrap .play_container .user_data_container {
   background: #964202;
   border-radius: 100%;
   color: #ffffff;
-  transition: all 700ms ease-in-out;
+  transition: all 500ms ease-in-out;
+}
+.wrap_game .play_container {
+  background: url("/images/bg_bowling_2.png") no-repeat center;
+  margin: 0px auto;
+  width: 1000px;
+  height: 560px;
+}
+.wrap_game .play_container .user_data_container {
+  background: rgba(128, 128, 128, 0.2);
+  display: inline-block;
+  margin-top: 4px;
+  height: 130px;
+  width: 32.8%;
+}
+.wrap_game .play_container .user_data_container .user_name {
+  color: #d4bc8d;
+  display: block;
+  font-family: 'Amaranth', sans-serif;
+  font-size: 22px;
+  margin: 40px 0px 0px 35px;
+  max-width: 265px;
+}
+.wrap_game .play_container .user_data_container .user_point {
+  color: #e3611c;
+  display: block;
+  font-size: 18px;
+  margin: 10px 0px 0px 35px;
+  text-shadow: 0px 1px 0px #4d0000;
+}
+.wrap_game .play_container .pitch {
+  animation: pitch 10s infinite;
+  background: rgba(2, 255, 166, 0.3);
+  border: 3px solid white;
+  border-radius: 100%;
+  box-shadow: 0px 2px 3px #390000;
+  color: white;
+  display: block;
+  font-size: 25px;
+  line-height: 2.8;
+  margin: 100px 0px 0px 470px;
+  text-align: center;
+  width: 70px;
+}
+@keyframes pitch {
+  20% {
+    background: rgba(142, 255, 2, 0.3);
+  }
+  40% {
+    background: rgba(2, 255, 237, 0.3);
+  }
+  60% {
+    background: rgba(62, 2, 255, 0.3);
+  }
+  80% {
+    background: rgba(142, 255, 2, 0.3);
+  }
+}
+.wrap_game .play_container .pitch:hover {
+  cursor: pointer;
+}
+.wrap_game .play_container .final_button {
+  background: rgba(2, 175, 255, 0.3);
+  border: 3px solid white;
+  border-radius: 100%;
+  box-shadow: 0px 2px 3px #390000;
+  color: white;
+  display: none;
+  font-size: 25px;
+  line-height: 3.5;
+  margin: 20px 0px 0px 460px;
+  text-align: center;
+  height: 90px;
+  width: 90px;
+}
+.wrap_game .play_container .final_button:hover {
+  cursor: pointer;
 }

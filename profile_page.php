@@ -1,10 +1,8 @@
 <?php
 
     require_once('create_user.php');
-//    require_once('config_game.php');
 
     $user = new CreateUser();
-//    $game = new ConfigGame();
 ?>
 <!doctype html>
 <html lang="en">
@@ -49,16 +47,6 @@
                         $user->changeName($_POST['quality_input']);
                     }
                 ?>
-                <p class="pitch">
-                    <script>
-                        var data_input = <?php echo $_POST['quality_input']; ?> ;
-
-                        $('.pitch').bind('click', function () {
-                            clickButtonPitch(data_input);
-                        });
-                    </script>
-                    pitch
-                </p>
             </div>
         </div>
     </body>

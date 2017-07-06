@@ -1,7 +1,7 @@
 <?php
-    require_once('PDOConfig2.php');
+    require_once('PDOConfig.php');
 
-    $pdo = new PDOConfig2();
+    $pdo = new PDOConfig();
 ?>
 
 <!doctype html>
@@ -69,7 +69,6 @@
                     }
                 }
              ?>
-
         </div>
     </wrapper>
 </body>

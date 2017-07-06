@@ -1,5 +1,5 @@
 <?php
-    require_once('PDOConfig2.php');
+    require_once('PDOConfig.php');
     require_once('config_game.php');
 
     class User {
@@ -28,14 +28,37 @@
             static $i = 1;
             ?>
             <div class="user_data_container_<?php echo $i; ?> user_data_container">
-                <p class="user_name_<?php echo $i; ?>">
+                <span class="user_name_<?php echo $i; ?> user_name">
                     Name:
-                </p>
-                <p class="user_point_<?php echo $i; ?>">
+                </span>
+                <span class="user_point_<?php echo $i; ?> user_point">
                     Points: 0
-                </p>
+                </span>
             </div>
         <?php $i++;
+        }
+
+        public function createPitchButton() {
+            ?>
+            <span class="pitch">
+                pitch
+                <script>
+                    var data_input = <?php echo $_POST['quality_input']; ?> ;
+
+                    $('.pitch').bind('click', function () {
+                        clickButtonPitch(data_input);
+                    });
+                </script>
+            </span>
+            <p class="final_button">
+                re-play
+                <script>
+                    $('.final_button').bind('click', function () {
+                        redirect();
+                    });
+                </script>
+            </p>
+            <?php
         }
     }
 ?>

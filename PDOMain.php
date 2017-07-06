@@ -1,42 +1,54 @@
 <?php
+
+session_start();
+
 class PDOMain {
 
-    private $MPDO;
+    private $connect;
 
-    function __construct($dbname = "bowling_users", $host = "localhost", $user = "root", $password = "") {
+    public function __construct($dbName = 'bowling_users', $host = 'localhost', $login = 'root', $password = '', $charset = 'utf8') {
+
+        $dsn = "mysql:host=$host;dbname=$dbName;charset=$charset";
 
         try {
-            $this->MPDO = new PDO("mysql: dbname = $dbname;
-                                               host = $host",
-                                                $user,
-                                                $password);
-            return $this->MPDO;
+            $options = [
+                PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+                PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+                PDO::ATTR_EMULATE_PREPARES => false,
+            ];
+
+            $this->connect = new PDO($dsn, $login, $password, $options);
+
+            //Check connection
+            if ($this->connect->connect_error) {
+                die("<br/>Connection failed: " . $this->connect->connect_error . "<br/>");
+            }
         }
         catch(PDOException $e) {
-            echo "Autologic error </br>" . $e->getMessage();
+            echo "<br/> CONNECT ERROR <br/>" . $e->getMessage() . "<br/>";
         }
+        return $this->connect;
     }
 
-    function selectPDO($db, $cols, $where = "", $order = "", $limit = "") {
-        $sql = "SELECT {$cols} FROM '{$db}' {$where} {$order} {$limit}";
-        $result = $this->MPDO->query($sql);
-        $result->execute();
+    public function PDOSelect($cols, $dbTable) {
 
-        if ($where != "") {
-            $row = $result->fetchAll(PDO::FETCH_ASSOC);
-            return $row;
-        }
-        else {
-            echo "Incorrect data (not specified 'WHERE') </br>";
-        }
+        $sql = "SELECT $cols FROM `$dbTable`";
+        $result = $this->connect->query($sql);
+
+        return $result;
     }
 
-    function insertPDO($db, $cols = "", $values = "") {
-        if ($cols == "") {
-            echo "not find cols </br>";
-        }
-        $sql = "INSERT INTO '{$db}' {($cols)} VALUES {($values)}";
-        $this->MPDO->query($sql);
+    public function PDOInsert($dbTable, $loginValue, $passwordValue) {
+
+        $sql = "INSERT INTO $dbTable (`user_login`, `user_password`) VALUES (:login, :password)";
+
+        $query = $this->connect->prepare($sql);
+        $query->bindValue(':login', $loginValue);
+        $query->bindValue(':password', $passwordValue);
+
+        $result = $query->execute();
+
+        return $result;
     }
 }
 ?>

@@ -52,6 +52,7 @@ function checkInputsForReg() {
 /*
 Profile Page
 */
+
 function propButtonDisabled(attr_for_prop) {
     $(attr_for_prop).prop('disabled', true);
 }
@@ -59,8 +60,14 @@ function propButtonDisabled(attr_for_prop) {
 function setName(i) {
     var a = prompt('Enter name for player №' + i);
 
-    if(a.length > 0) {
+    if (a !== '') {
         $('.user_name_' + i).text('Name: ' + a);
+    }
+    else if (a === '') {
+        setName(i);
+    }
+    else {
+        alert('You press cancel.');
     }
 }
 
@@ -91,10 +98,18 @@ function congr(points_array) {
             points = points_array[i];
             var id = i + 1;
             name = $('.user_name_' + id).html().substr(5);
-
         }
     }
     return 'Congratulations, ' + name + '\n You win! \n' + 'points: ' + points;
+}
+
+function showFinalButton() {
+    return $('.final_button').show('slow');
+}
+
+function redirect() {
+    var url = "http://study.com.co/profile_page.php";
+    return $(location).attr('href', url);
 }
 
 var points_array = [];
@@ -230,5 +245,6 @@ function clickButtonPitch(quality_players) {
     }
     else if (total_pitches == (quality_players * 10)) {
         alert(congr(points_array));
+        showFinalButton();
     }
 }
